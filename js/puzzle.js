@@ -36,6 +36,8 @@ $(function() {
                     }
                     else{
                         input.setAttribute("placeholder", puzzleArray[startPosition+x+9*i]);
+                        input.setAttribute("disabled", true);
+
                     }
 
 
