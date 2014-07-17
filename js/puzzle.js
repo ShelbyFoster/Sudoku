@@ -1,4 +1,4 @@
-var puzzleArray = [0,8,9, 7,1,4, 6,3,5,   //solved puzzle
+var puzzleArray =  [2,8,9, 7,1,4, 6,3,5,   //solved puzzle
                     6,3,4, 5,8,9, 1,2,7,
                     7,1,5, 6,3,2, 9,4,8,
 
@@ -11,20 +11,7 @@ var puzzleArray = [0,8,9, 7,1,4, 6,3,5,   //solved puzzle
                     9,5,6, 2,4,7, 3,8,1];
 
 
-var puzzlerray = [2,8,9, 7,1,4, 6,3,5,   //solved puzzle
-                    6,3,4, 5,8,9, 1,2,7,
-                    7,1,5, 6,3,2, 9,4,8,
-
-                    3,9,7, 8,2,1, 5,6,4,
-                    5,4,8, 9,6,3, 7,1,2,
-                    1,6,2, 4,7,5, 8,9,3,
-
-                    8,2,3, 1,5,6, 4,7,9,
-                    4,7,1, 3,9,8, 2,5,6,
-                    9,5,6, 2,4,7, 3,8,1];
-
-
-function generatePuzzle() {
+function printPuzzle() {
     var counter = 0;    //counter for start of squares
     var inputCounter = 0;    //id counter for inputs
     for(var j = 1; j < 10; j++){   //create 9 divs for each square of the puzzle
@@ -73,14 +60,20 @@ function generatePuzzle() {
 
         counter++;
     }
+    generateEasyPuzzle();
 }
 
 
 $(document).ready(function() {
 
-    generatePuzzle();
-    checkPuzzle();
-    checkOneChoice(0);
+    printPuzzle();
+    //checkPuzzle();
+    //checkOneChoice(60);
+    //solver();
+   // generateEasyPuzzle();
+    solver()
+    //checkOneChoice(0);
+
 
     $('input').keyup(function(){
         var val = $(this).val();
