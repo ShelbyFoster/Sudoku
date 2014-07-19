@@ -130,6 +130,11 @@ function checkPuzzle(){
         console.log("This puzzle is invalid");
         return false;
     }
+
+    $('.puzzleCompleted').addClass('active');
+    $('.completedImage').addClass('active');
+    $('.solve').hide();
+    $('.generate').hide();
     console.log("Puzzle Completed Successfully");
     return true;
 }
