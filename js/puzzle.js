@@ -12,6 +12,48 @@ var puzzleArray =  [2,8,9, 7,1,4, 6,3,5,   //solved puzzle
 
 
 function printPuzzle() {
+    $(".grid").empty();
+    var flip = [0,1,2,3,4,5,6,7,8,9];
+    var randomNum = Math.floor(Math.random()*10)
+    console.log(flip[randomNum]);
+
+
+    //flips the puzzle to generate a new 'random' puzzle.
+    switch (flip[randomNum]) {
+        case 0:
+            flipPuzzleHorizontalVertical();
+            break;
+        case 1:
+            flipPuzzleHorizontal();
+            break;
+        case 2:
+            flipPuzzleVertical();
+            break;
+        case 3:
+            flipPuzzleRows1();
+            break;
+        case 4:
+            flipPuzzleRows2();
+            break;
+        case 5:
+            flipPuzzleRows3();
+            break;
+        case 6:
+            flipPuzzleRows4();
+            break;
+        case 7:
+            flipPuzzleColumn1();
+            break;
+        case 8:
+            flipPuzzleColumn2();
+            break;
+        case 9:
+            flipPuzzleColumn3();
+            break;
+    }
+
+
+
     var counter = 0;    //counter for start of squares
     var inputCounter = 0;    //id counter for inputs
     for(var j = 1; j < 10; j++){   //create 9 divs for each square of the puzzle
@@ -60,6 +102,7 @@ function printPuzzle() {
 
         counter++;
     }
+
     generateEasyPuzzle();
 }
 
@@ -67,13 +110,6 @@ function printPuzzle() {
 $(document).ready(function() {
 
     printPuzzle();
-    //checkPuzzle();
-    //checkOneChoice(60);
-    //solver();
-   // generateEasyPuzzle();
-    solver()
-    //checkOneChoice(0);
-
 
     $('input').keyup(function(){
         var val = $(this).val();
@@ -83,5 +119,7 @@ $(document).ready(function() {
 
         checkPuzzle();
     })
+
+
 
 });

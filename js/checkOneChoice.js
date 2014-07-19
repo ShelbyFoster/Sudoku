@@ -18,8 +18,6 @@ function checkOneChoice(position){
         }
     })
 
-    //console.log(currInput.parent().attr("id"))
-
 
     //determines which row it lies on
     var r = puzzlePosition/9;
@@ -102,11 +100,9 @@ function checkOneChoice(position){
 
     //returns index if only 1 false, else returns 0
     if(falseValues === 1){
-       // console.log(correctValue);
         return correctValue;
     }
     else{
-        //console.log("not working");
         return 0;
 
     }
