@@ -108,7 +108,6 @@ function printPuzzle() {
 $(document).ready(function() {
 
     printPuzzle();
-
     $('input').keyup(function(){
         var val = $(this).val();
         var index = $(this).attr("id");
