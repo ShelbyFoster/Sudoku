@@ -10,6 +10,8 @@ var puzzleArray =  [2,8,9, 7,1,4, 6,3,5,   //solved puzzle
                     4,7,1, 3,9,8, 2,5,6,
                     9,5,6, 2,4,7, 3,8,1];
 
+var solvedArray = [];
+
 
 function printPuzzle() {
     $(".grid").empty();
@@ -100,19 +102,43 @@ function printPuzzle() {
 
         counter++;
     }
-
     generateEasyPuzzle();
 }
 
 
 $(document).ready(function() {
-
     printPuzzle();
+    console.log(solvedArray);
+
     $('input').keyup(function(){
         var val = $(this).val();
-        var index = $(this).attr("id");
+        if(val == ""){
+            val = 0;
+            console.log(val);
+        }
+        else{
+            console.log(val);
+        }
 
+        var index = $(this).attr("id");
         puzzleArray[index] = val;
+
+        var t = $(this);
+        //$(this).classList.remove("red");
+        t.addClass("white");
+        t.removeClass("red");
+        //$(this).css("background-color", "white");
+//        console.log(puzzleArray[index]);
+//        console.log(solvedArray[index]);
+//        if((puzzleArray[index] == solvedArray[index]) || val == ""){
+//           console.log("correct");
+//            $(this).css("background-color", "white");
+//        }
+//        else{
+//            console.log("should be red...");
+//            $(this).css("background-color", "red");
+//        }
+//        console.log("val",val);
 
         checkPuzzle();
     })

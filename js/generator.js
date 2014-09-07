@@ -3,6 +3,8 @@
  * have one number for each empty cell, this is checked by using checkOneChoice().
  */
 function generateEasyPuzzle(){
+    solvedArray = puzzleArray.slice(0);
+
     var getRandNumVal = 500;
 
     for(var i = 0; i < getRandNumVal; i++){         //iterates through * times

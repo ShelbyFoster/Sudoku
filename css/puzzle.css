@@ -56,3 +56,9 @@
   margin-top: 10px;
   padding: 10px;
 }
+.red {
+  border: 2px solid red;
+}
+.white {
+  border: 2px inset;
+}
